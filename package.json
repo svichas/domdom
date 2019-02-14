@@ -1,5 +1,5 @@
 {
-  "name": "domdom",
+  "name": "domdom-js",
   "version": "0.1.0",
   "description": "domdom is a javascript library for creating DOM elements.",
   "main": "index.js",

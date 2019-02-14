@@ -135,7 +135,7 @@ var domdomElement = function () {
                     return this;
                } else if ((typeof content === "undefined" ? "undefined" : _typeof(content)) === "object" && content.DOMDOMELEMENT) {
                     // set to element html
-                    this.element.innerHTML = content.element.innerHTML;
+                    this.element.innerHTML = content.element.outerHTML;
                     return this;
                }
 
