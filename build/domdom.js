@@ -100,6 +100,23 @@ var domdomElement = function () {
           key: "append",
           value: function append(child) {
                this.element.appendChild(child.element);
+               return this;
+          }
+
+          /**
+          * Method to get/set html to domdom element
+          * @param string content 
+          */
+
+     }, {
+          key: "html",
+          value: function html(content) {
+               if (content) {
+                    this.element.innerHTML = content;
+                    return this;
+               }
+
+               return this.element.innerHTML;
           }
      }]);
 

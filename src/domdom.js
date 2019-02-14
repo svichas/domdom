@@ -77,6 +77,20 @@ class domdomElement {
      */
      append(child) {
           this.element.appendChild(child.element);
+          return this;
+     }
+
+     /**
+     * Method to get/set html to domdom element
+     * @param string content 
+     */
+     html(content) {
+          if (content) {
+               this.element.innerHTML = content;
+               return this;
+          }
+
+          return this.element.innerHTML;
      }
 
 }
