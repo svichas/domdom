@@ -12,7 +12,6 @@ class domdom {
 
      }
 
-
      /**
      * Method to create a domdom element
      * @param string elementType
@@ -82,11 +81,16 @@ class domdomElement {
 
      /**
      * Method to get/set html to domdom element
-     * @param string content 
+     * @param string content
      */
      html(content) {
-          if (content) {
+
+          if (typeof content === "string") {
                this.element.innerHTML = content;
+               return this;
+          } else if (typeof content === "object" && content.DOMDOMELEMENT) {
+               // set to element html
+               this.element.innerHTML = content.element.innerHTML;
                return this;
           }
 
