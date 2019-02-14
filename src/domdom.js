@@ -74,6 +74,15 @@ class domdomElement {
      }
 
      /**
+     * Method to remove a class
+     * @param string classname
+     */
+     removeClass(classname) {
+          this.element.classList.remove(classname);
+          return this;
+     }
+
+     /**
      * Method to append domdom element to a domdom container
      * @param object container
      */
@@ -108,6 +117,7 @@ class domdomElement {
           }
 
           return this.element.innerHTML;
+
      }
 
 }
