@@ -11,15 +11,17 @@
 <body>
 
      <script>
+          new domdom(function(dd) {
 
-          var dd = new domdom();
+               var container = dd
+               .create("div")
+               .addClass("test")
+               .html(dd.create("span").html("test"));
 
-          var container = dd
-          .create("div")
-          .addClass("test")
-          .html(dd.create("span").html("awesome"));
+               container.appendTo(dd.select("body"));
 
-          container.appendTo(dd.select("body"));
+          });
+
 
      </script>
 

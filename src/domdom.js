@@ -8,8 +8,21 @@
 
 class domdom {
 
-     constructor() {
+     constructor(onloadMethod) {
+          let _this = this;
 
+          return this.domOnReady(function() {
+               return onloadMethod(_this);
+          });
+     }
+
+     domOnReady(fn) {
+          if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+            fn();
+          } else {
+            document.addEventListener('DOMContentLoaded', fn);
+          }
+          return true;
      }
 
      /**

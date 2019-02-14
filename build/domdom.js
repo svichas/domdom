@@ -15,17 +15,33 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 */
 
 var domdom = function () {
-     function domdom() {
+     function domdom(onloadMethod) {
           _classCallCheck(this, domdom);
+
+          var _this = this;
+
+          return this.domOnReady(function () {
+               return onloadMethod(_this);
+          });
      }
 
-     /**
-     * Method to create a domdom element
-     * @param string elementType
-     */
-
-
      _createClass(domdom, [{
+          key: "domOnReady",
+          value: function domOnReady(fn) {
+               if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+                    fn();
+               } else {
+                    document.addEventListener('DOMContentLoaded', fn);
+               }
+               return true;
+          }
+
+          /**
+          * Method to create a domdom element
+          * @param string elementType
+          */
+
+     }, {
           key: "create",
           value: function create(elementType) {
                var element = document.createElement(elementType);
