@@ -1,0 +1,35 @@
+{
+  "name": "domdom",
+  "version": "0.1.0",
+  "description": "domdom is a javascript library for creating DOM elements.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
+  },
+  "scripts": {
+    "build": "babel --presets es2015 src/domdom.js -o build/domdom.js",
+    "start": "http-server",
+    "webpack": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svichas/domdom.git"
+  },
+  "keywords": [
+    "domdom",
+    "js"
+  ],
+  "author": "Stefanos Vichas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/svichas/domdom/issues"
+  },
+  "homepage": "https://github.com/svichas/domdom#readme"
+}
