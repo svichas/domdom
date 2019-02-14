@@ -17,12 +17,24 @@ var domdom = function () {
           _classCallCheck(this, domdom);
      }
 
+     /**
+     * Method to create a domdom element
+     * @param string elementType
+     */
+
+
      _createClass(domdom, [{
           key: "create",
           value: function create(elementType) {
                var element = document.createElement(elementType);
                return new domdomElement(element);
           }
+
+          /**
+          * Method to select a domdom element
+          * @param string selector
+          */
+
      }, {
           key: "select",
           value: function select(selector) {
@@ -40,6 +52,11 @@ var domdom = function () {
 }();
 
 var domdomElement = function () {
+
+     /**
+     * Main method to init domdom element
+     * @param object element
+     */
      function domdomElement(element) {
           _classCallCheck(this, domdomElement);
 
@@ -48,18 +65,41 @@ var domdomElement = function () {
           return this;
      }
 
+     /**
+     * Method to addClass
+     * @param string classname
+     */
+
+
      _createClass(domdomElement, [{
           key: "addClass",
           value: function addClass(classname) {
                this.element.classList.add(classname);
                return this;
           }
+
+          /**
+          * Method to append domdom element to a domdom container
+          * @param object container
+          */
+
      }, {
           key: "appendTo",
-          value: function appendTo(element) {
-               if (!element.DOMDOMELEMENT) return this;
-               element.element.appendChild(this.element);
+          value: function appendTo(container) {
+               if (!container.DOMDOMELEMENT) return this;
+               container.element.appendChild(this.element);
                return this;
+          }
+
+          /**
+          * Method to append domdom child to this domdom element
+          * @param object child
+          */
+
+     }, {
+          key: "append",
+          value: function append(child) {
+               this.element.appendChild(child.element);
           }
      }]);
 
