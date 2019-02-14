@@ -13,7 +13,10 @@
      <script>
 
           var dd = new domdom();
-          dd.create("div");
+
+          var container = dd.create("div").addClass("test");
+
+          container.appendTo(dd.select("body"));
 
      </script>
 
