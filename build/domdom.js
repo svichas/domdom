@@ -20,9 +20,13 @@ var domdom = function () {
 
           var _this = this;
 
-          return this.ready(function () {
-               return onloadMethod(_this);
-          });
+          if (typeof onloadMethod === "function") {
+               return this.ready(function () {
+                    return onloadMethod(_this);
+               });
+          }
+
+          return true;
      }
 
      /**

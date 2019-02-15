@@ -11,17 +11,12 @@
 <body>
 
      <script>
-          new domdom(function(dd) {
+         var dd = new domdom();
 
-               var container = dd
-               .create("div")
-               .addClass("test")
-               .html(dd.create("span")
-               .html("test").addClass("t1").addClass("t2").removeClass("t2"));
 
-               container.appendTo(dd.select("body"));
-
-          });
+         dd.ready(function() {
+             alert("dom is ready");
+         });
 
 
      </script>
