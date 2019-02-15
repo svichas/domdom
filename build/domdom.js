@@ -20,14 +20,20 @@ var domdom = function () {
 
           var _this = this;
 
-          return this.domOnReady(function () {
+          return this.ready(function () {
                return onloadMethod(_this);
           });
      }
 
+     /**
+     * Method to excute a function when dom is ready
+     * @param function ready
+     */
+
+
      _createClass(domdom, [{
-          key: "domOnReady",
-          value: function domOnReady(fn) {
+          key: "ready",
+          value: function ready(fn) {
                if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
                     fn();
                } else {

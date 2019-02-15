@@ -11,12 +11,16 @@ class domdom {
      constructor(onloadMethod) {
           let _this = this;
 
-          return this.domOnReady(function() {
+          return this.ready(function() {
                return onloadMethod(_this);
           });
      }
 
-     domOnReady(fn) {
+     /**
+     * Method to excute a function when dom is ready
+     * @param function ready
+     */
+     ready(fn) {
           if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
             fn();
           } else {
