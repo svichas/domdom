@@ -85,6 +85,7 @@ class domdomElement {
      * Method to set style attribute to a element
      */
      css(styles) {
+
           switch (typeof styles) {
                case "object":
                     for (let styleProperty in styles) {
@@ -128,6 +129,22 @@ class domdomElement {
      }
 
      /**
+     * Method to attach events to element
+     * @param string eventsString
+     * @param function method
+     */
+     on(eventsString, method) {
+
+          let events = eventsString.split(" ");
+
+          for (event of events) {
+               this.element.addEventListener(event, method);
+          }
+
+          return this;
+     }
+
+     /**
      * Method to get/set html to domdom element
      * @param string content
      */
@@ -147,3 +164,7 @@ class domdomElement {
      }
 
 }
+
+
+
+var dd = new domdom();

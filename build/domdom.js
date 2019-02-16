@@ -113,6 +113,7 @@ var domdomElement = function () {
      }, {
           key: "css",
           value: function css(styles) {
+
                switch (typeof styles === "undefined" ? "undefined" : _typeof(styles)) {
                     case "object":
                          for (var styleProperty in styles) {
@@ -165,6 +166,46 @@ var domdomElement = function () {
           }
 
           /**
+          * Method to attach events to element
+          * @param string eventsString
+          * @param function method
+          */
+
+     }, {
+          key: "on",
+          value: function on(eventsString, method) {
+
+               var events = eventsString.split(" ");
+
+               var _iteratorNormalCompletion = true;
+               var _didIteratorError = false;
+               var _iteratorError = undefined;
+
+               try {
+                    for (var _iterator = events[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                         event = _step.value;
+
+                         this.element.addEventListener(event, method);
+                    }
+               } catch (err) {
+                    _didIteratorError = true;
+                    _iteratorError = err;
+               } finally {
+                    try {
+                         if (!_iteratorNormalCompletion && _iterator.return) {
+                              _iterator.return();
+                         }
+                    } finally {
+                         if (_didIteratorError) {
+                              throw _iteratorError;
+                         }
+                    }
+               }
+
+               return this;
+          }
+
+          /**
           * Method to get/set html to domdom element
           * @param string content
           */
@@ -188,3 +229,5 @@ var domdomElement = function () {
 
      return domdomElement;
 }();
+
+var dd = new domdom();

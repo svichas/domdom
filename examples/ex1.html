@@ -12,17 +12,17 @@
 
      <script>
 
-          var dd = new domdom();
-
           dd.ready(function() {
 
                dd.create("div")
                .html("shellaki")
                .addClass("test")
+               .removeClass("test")
                .css({
                     "color": "red",
                     "background-color": "blue",
-                    "display": "inline-block"
+                    "display": "inline-block",
+                    "font-size": 100
                })
                .appendTo(dd.select("body"));
 
