@@ -101,6 +101,14 @@ class domdomElement {
      }
 
      /**
+     * Method to check if domdom has a class
+     * @param string classname
+     */
+     hasClass(classname) {
+          return this.element.classList.contains(classname);
+     }
+
+     /**
      * Method to remove a class
      * @param string classname
      */

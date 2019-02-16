@@ -14,17 +14,15 @@
 
           dd.ready(function() {
 
-               dd.create("div")
-               .html("shellaki")
-               .addClass("test")
-               .removeClass("test")
-               .css({
-                    "color": "red",
-                    "background-color": "blue",
-                    "display": "inline-block",
-                    "font-size": 100
-               })
-               .appendTo(dd.select("body"));
+               var list = dd.create("ul").addClass("container_list");
+
+               for (i = 0; i <= 100; i++) {
+                    list.append(dd.create("li").html("item" + i));
+               }
+
+               list.appendTo(dd.select("body"));
+
+               console.log(list.hasClass("container_list"));
 
           });
 
