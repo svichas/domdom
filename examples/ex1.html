@@ -11,13 +11,22 @@
 <body>
 
      <script>
-         var dd = new domdom();
 
+          var dd = new domdom();
 
-         dd.ready(function() {
-             alert("dom is ready");
-         });
+          dd.ready(function() {
 
+               dd.create("div")
+               .html("shellaki")
+               .addClass("test")
+               .css({
+                    "color": "red",
+                    "background-color": "blue",
+                    "display": "inline-block"
+               })
+               .appendTo(dd.select("body"));
+
+          });
 
      </script>
 

@@ -107,6 +107,27 @@ var domdomElement = function () {
           }
 
           /**
+          * Method to set style attribute to a element
+          */
+
+     }, {
+          key: "css",
+          value: function css(styles) {
+               switch (typeof styles === "undefined" ? "undefined" : _typeof(styles)) {
+                    case "object":
+                         for (var styleProperty in styles) {
+                              this.element.style[styleProperty] = styles[styleProperty];
+                         }
+                         break;
+                    case "string":
+                         this.element.style = styles;
+                         break;
+               }
+
+               return this;
+          }
+
+          /**
           * Method to remove a class
           * @param string classname
           */

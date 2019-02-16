@@ -82,6 +82,24 @@ class domdomElement {
      }
 
      /**
+     * Method to set style attribute to a element
+     */
+     css(styles) {
+          switch (typeof styles) {
+               case "object":
+                    for (let styleProperty in styles) {
+                         this.element.style[styleProperty] = styles[styleProperty];
+                    }
+                    break;
+               case "string":
+                    this.element.style = styles;
+                    break;
+          }
+
+          return this;
+     }
+
+     /**
      * Method to remove a class
      * @param string classname
      */
