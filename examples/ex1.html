@@ -14,7 +14,7 @@
 
           dd.ready(function() {
 
-               dd.create("div")
+               var ls = dd.create("div")
                .html("shellaki")
                .addClass("test")
                .removeClass("test")
@@ -23,6 +23,9 @@
                     "background-color": "blue",
                     "display": "inline-block",
                     "font-size": 100
+               })
+               .on("click", function(e) {
+                    ls.remove();
                })
                .appendTo(dd.select("body"));
 

@@ -160,7 +160,15 @@ class domdomElement {
           }
 
           return this.element.innerHTML;
+     }
 
+
+     /**
+     * Method to remove domdom element
+     */
+     remove() {
+          this.element.remove();
+          return this;
      }
 
 }

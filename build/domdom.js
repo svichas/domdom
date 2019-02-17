@@ -225,6 +225,17 @@ var domdomElement = function () {
 
                return this.element.innerHTML;
           }
+
+          /**
+          * Method to remove domdom element
+          */
+
+     }, {
+          key: "remove",
+          value: function remove() {
+               this.element.remove();
+               return this;
+          }
      }]);
 
      return domdomElement;
