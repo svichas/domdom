@@ -13,6 +13,19 @@
      <script>
           dd.ready(function() {
 
+<<<<<<< HEAD
+=======
+               var list = dd.create("ul").addClass("container_list");
+
+               for (i = 0; i <= 100; i++) {
+                    list.append(dd.create("li").html("item" + i));
+               }
+
+               list.appendTo(dd.select("body"));
+
+               console.log(list.hasClass("container_list"));
+
+>>>>>>> 765af487c565ab9c46a6d3fbaa364c09d89379e9
           });
      </script>
 

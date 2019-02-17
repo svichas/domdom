@@ -129,6 +129,17 @@ var domdomElement = function () {
           }
 
           /**
+          * Method to check if domdom has a class
+          * @param string classname
+          */
+
+     }, {
+          key: "hasClass",
+          value: function hasClass(classname) {
+               return this.element.classList.contains(classname);
+          }
+
+          /**
           * Method to remove a class
           * @param string classname
           */
