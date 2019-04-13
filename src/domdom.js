@@ -170,6 +170,23 @@ class domdomElement {
           return this.element.innerHTML;
      }
 
+     /**
+     * Method to set/get texts content
+     * @param string content
+     */
+     text(content) {
+          if (typeof content === "string") {
+               this.element.innerText = content;
+               return this;
+          } else if (typeof content === "object" && content.DOMDOMELEMENT) {
+               // set to element html
+               this.element.innerText = content.element.outerHTML;
+               return this;
+          }
+
+          return this.element.innerText;
+     }
+
 
      /**
      * Method to remove domdom element
