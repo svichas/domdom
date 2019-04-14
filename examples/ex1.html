@@ -11,16 +11,25 @@
 <body>
 
      <script>
+
           dd.ready(function() {
-               var element = dd.create("div");
 
-               element.text("test<b>test</b>");
+               var ls = dd.create("ul");
 
-               element.on("click", function() {
-                    alert(1);
-               });
-               element.appendTo(dd.select("body"));
+               for (var i = 1; i <= 10; i++) {
+                    var item = dd.create("li");
+                    item.html("Item " + i);
+                    item.attribute("item", i);
+
+
+                    
+                    item.appendTo(ls);
+               }
+
+               return ls.appendTo(dd.select("body"));
+
           });
+
      </script>
 
 </body>

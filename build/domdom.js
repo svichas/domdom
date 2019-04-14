@@ -66,7 +66,16 @@ var domdom = function () {
      }, {
           key: "select",
           value: function select(selector) {
-               var element = document.querySelector(selector);
+               var element = void 0;
+
+               switch (typeof selector === "undefined" ? "undefined" : _typeof(selector)) {
+                    case "string":
+                         element = document.querySelector(selector);
+                         break;
+                    case "object":
+                         element = selector;
+                         break;
+               }
 
                if (element) {
                     return new domdomElement(element);
@@ -103,6 +112,23 @@ var domdomElement = function () {
           key: "addClass",
           value: function addClass(classname) {
                this.element.classList.add(classname);
+               return this;
+          }
+
+          /**
+          * Attribute
+          * @param string key
+          * @param string value
+          */
+
+     }, {
+          key: "attribute",
+          value: function attribute(key, value) {
+               if (typeof value === "undefined") {
+                    this.element.getAttribute(key);
+               } else {
+                    this.element.setAttribute(key, value);
+               }
                return this;
           }
 
@@ -187,6 +213,8 @@ var domdomElement = function () {
           value: function on(eventsString, method) {
 
                var events = eventsString.split(" ");
+
+               method.apply(this);
 
                var _iteratorNormalCompletion = true;
                var _didIteratorError = false;

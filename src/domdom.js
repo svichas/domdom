@@ -47,7 +47,16 @@ class domdom {
      * @param string selector
      */
      select(selector) {
-          let element = document.querySelector(selector);
+          let element;
+
+          switch (typeof selector) {
+               case "string":
+                    element = document.querySelector(selector);
+                    break;
+               case "object":
+                    element = selector;
+                    break;
+          }
 
           if (element) {
                return new domdomElement(element);
@@ -78,6 +87,20 @@ class domdomElement {
      */
      addClass(classname) {
           this.element.classList.add(classname);
+          return this;
+     }
+
+     /**
+     * Attribute
+     * @param string key
+     * @param string value
+     */
+     attribute(key, value) {
+          if (typeof value === "undefined") {
+               this.element.getAttribute(key);
+          } else {
+               this.element.setAttribute(key, value);
+          }
           return this;
      }
 
@@ -144,6 +167,8 @@ class domdomElement {
      on(eventsString, method) {
 
           let events = eventsString.split(" ");
+
+          method.apply(this);
 
           for (event of events) {
                this.element.addEventListener(event, method);
