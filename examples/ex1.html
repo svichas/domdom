@@ -21,8 +21,17 @@
                     item.html("Item " + i);
                     item.attribute("item", i);
 
+                    var check = dd.create("input");
 
-                    
+                    check.attribute("type", "checkbox")
+                         .attribute("name", "item_"+i)
+                         .appendTo(item);
+                   
+                    check.on("change", function(e) {
+                         var _this = dd.select(this);                   
+                         console.log(_this.is(":checked"));                         
+                    });
+
                     item.appendTo(ls);
                }
 

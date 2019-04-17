@@ -88,6 +88,8 @@ var domdom = function () {
      return domdom;
 }();
 
+var dd = new domdom();
+
 var domdomElement = function () {
 
      /**
@@ -184,7 +186,34 @@ var domdomElement = function () {
 
      }, {
           key: "is",
-          value: function is(query) {}
+          value: function is(query) {
+               var _iteratorNormalCompletion = true;
+               var _didIteratorError = false;
+               var _iteratorError = undefined;
+
+               try {
+                    for (var _iterator = document.querySelectorAll(query)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                         var elem = _step.value;
+
+                         if (elem === this.element) return true;
+                    }
+               } catch (err) {
+                    _didIteratorError = true;
+                    _iteratorError = err;
+               } finally {
+                    try {
+                         if (!_iteratorNormalCompletion && _iterator.return) {
+                              _iterator.return();
+                         }
+                    } finally {
+                         if (_didIteratorError) {
+                              throw _iteratorError;
+                         }
+                    }
+               }
+
+               return false;
+          }
 
           /**
            * Method to append domdom element to a domdom container
@@ -236,27 +265,27 @@ var domdomElement = function () {
 
                method.apply(this);
 
-               var _iteratorNormalCompletion = true;
-               var _didIteratorError = false;
-               var _iteratorError = undefined;
+               var _iteratorNormalCompletion2 = true;
+               var _didIteratorError2 = false;
+               var _iteratorError2 = undefined;
 
                try {
-                    for (var _iterator = events[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                         event = _step.value;
+                    for (var _iterator2 = events[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                         event = _step2.value;
 
                          this.element.addEventListener(event, method);
                     }
                } catch (err) {
-                    _didIteratorError = true;
-                    _iteratorError = err;
+                    _didIteratorError2 = true;
+                    _iteratorError2 = err;
                } finally {
                     try {
-                         if (!_iteratorNormalCompletion && _iterator.return) {
-                              _iterator.return();
+                         if (!_iteratorNormalCompletion2 && _iterator2.return) {
+                              _iterator2.return();
                          }
                     } finally {
-                         if (_didIteratorError) {
-                              throw _iteratorError;
+                         if (_didIteratorError2) {
+                              throw _iteratorError2;
                          }
                     }
                }
@@ -308,5 +337,3 @@ var domdomElement = function () {
 
      return domdomElement;
 }();
-
-var dd = new domdom();

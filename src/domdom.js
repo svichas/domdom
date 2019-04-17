@@ -67,7 +67,7 @@ class domdom {
 
 }
 
-
+var dd = new domdom();
 
 class domdomElement {
 
@@ -145,7 +145,11 @@ class domdomElement {
       * @param {string} query 
       */
      is(query) {
-          
+          for (let elem of document.querySelectorAll(query)) {
+               if (elem === this.element)
+                    return true;
+          }
+          return false;
      }
 
      /**
@@ -229,9 +233,8 @@ class domdomElement {
      }
 
 
-
 }
 
 
 
-var dd = new domdom();
+
