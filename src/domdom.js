@@ -8,12 +8,12 @@
 
 class domdom {
 
-     constructor(onloadMethod) {
+     constructor(fn) {
           let _this = this;
 
-          if (typeof onloadMethod === "function") {
+          if (typeof fn === "function") {
               return this.ready(function() {
-                   return onloadMethod(_this);
+                   return fn(_this);
               });
           }
 
