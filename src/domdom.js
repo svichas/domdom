@@ -72,9 +72,9 @@ class domdom {
 class domdomElement {
 
      /**
-     * Main method to init domdom element
-     * @param object element
-     */
+      * Main method to init domdom element
+      * @param object element
+      */
      constructor(element) {
           this.DOMDOMELEMENT = true;
           this.element = element;
@@ -82,19 +82,36 @@ class domdomElement {
      }
 
      /**
-     * Method to addClass
-     * @param string classname
-     */
+      * Method to addClass
+      * @param string classname
+      */
      addClass(classname) {
           this.element.classList.add(classname);
           return this;
      }
 
      /**
-     * Attribute
-     * @param string key
-     * @param string value
-     */
+      * Method to remove a class
+      * @param string classname
+      */
+     removeClass(classname) {
+          this.element.classList.remove(classname);
+          return this;
+     }
+
+     /**
+      * Method to check if domdom has a class
+      * @param string classname
+      */
+     hasClass(classname) {
+          return this.element.classList.contains(classname);
+     }
+
+     /**
+      * Attribute
+      * @param string key
+      * @param string value
+      */
      attribute(key, value) {
           if (typeof value === "undefined") {
                this.element.getAttribute(key);
@@ -105,8 +122,8 @@ class domdomElement {
      }
 
      /**
-     * Method to set style attribute to a element
-     */
+      * Method to set style attribute to a element
+      */
      css(styles) {
 
           switch (typeof styles) {
@@ -124,26 +141,17 @@ class domdomElement {
      }
 
      /**
-     * Method to check if domdom has a class
-     * @param string classname
-     */
-     hasClass(classname) {
-          return this.element.classList.contains(classname);
+      * Method to check something on element
+      * @param {string} query 
+      */
+     is(query) {
+          
      }
 
      /**
-     * Method to remove a class
-     * @param string classname
-     */
-     removeClass(classname) {
-          this.element.classList.remove(classname);
-          return this;
-     }
-
-     /**
-     * Method to append domdom element to a domdom container
-     * @param object container
-     */
+      * Method to append domdom element to a domdom container
+      * @param object container
+      */
      appendTo(container) {
           if (!container.DOMDOMELEMENT) return this;
           container.element.appendChild(this.element);
@@ -151,19 +159,27 @@ class domdomElement {
      }
 
      /**
-     * Method to append domdom child to this domdom element
-     * @param object child
-     */
+      * Method to append domdom child to this domdom element
+      * @param object child
+      */
      append(child) {
           this.element.appendChild(child.element);
           return this;
      }
 
      /**
-     * Method to attach events to element
-     * @param string eventsString
-     * @param function method
-     */
+      * Method to remove domdom element
+      */
+     remove() {
+          this.element.remove();
+          return this;
+     }
+
+     /**
+      * Method to attach events to element
+      * @param string eventsString
+      * @param function method
+      */
      on(eventsString, method) {
 
           let events = eventsString.split(" ");
@@ -178,9 +194,9 @@ class domdomElement {
      }
 
      /**
-     * Method to get/set html to domdom element
-     * @param string content
-     */
+      * Method to get/set html to domdom element
+      * @param string content
+      */
      html(content) {
 
           if (typeof content === "string") {
@@ -196,9 +212,9 @@ class domdomElement {
      }
 
      /**
-     * Method to set/get texts content
-     * @param string content
-     */
+      * Method to set/get texts content
+      * @param string content
+      */
      text(content) {
           if (typeof content === "string") {
                this.element.innerText = content;
@@ -213,13 +229,6 @@ class domdomElement {
      }
 
 
-     /**
-     * Method to remove domdom element
-     */
-     remove() {
-          this.element.remove();
-          return this;
-     }
 
 }
 

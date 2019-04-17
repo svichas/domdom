@@ -91,9 +91,9 @@ var domdom = function () {
 var domdomElement = function () {
 
      /**
-     * Main method to init domdom element
-     * @param object element
-     */
+      * Main method to init domdom element
+      * @param object element
+      */
      function domdomElement(element) {
           _classCallCheck(this, domdomElement);
 
@@ -103,9 +103,9 @@ var domdomElement = function () {
      }
 
      /**
-     * Method to addClass
-     * @param string classname
-     */
+      * Method to addClass
+      * @param string classname
+      */
 
 
      _createClass(domdomElement, [{
@@ -116,10 +116,33 @@ var domdomElement = function () {
           }
 
           /**
-          * Attribute
-          * @param string key
-          * @param string value
-          */
+           * Method to remove a class
+           * @param string classname
+           */
+
+     }, {
+          key: "removeClass",
+          value: function removeClass(classname) {
+               this.element.classList.remove(classname);
+               return this;
+          }
+
+          /**
+           * Method to check if domdom has a class
+           * @param string classname
+           */
+
+     }, {
+          key: "hasClass",
+          value: function hasClass(classname) {
+               return this.element.classList.contains(classname);
+          }
+
+          /**
+           * Attribute
+           * @param string key
+           * @param string value
+           */
 
      }, {
           key: "attribute",
@@ -133,8 +156,8 @@ var domdomElement = function () {
           }
 
           /**
-          * Method to set style attribute to a element
-          */
+           * Method to set style attribute to a element
+           */
 
      }, {
           key: "css",
@@ -155,32 +178,18 @@ var domdomElement = function () {
           }
 
           /**
-          * Method to check if domdom has a class
-          * @param string classname
-          */
+           * Method to check something on element
+           * @param {string} query 
+           */
 
      }, {
-          key: "hasClass",
-          value: function hasClass(classname) {
-               return this.element.classList.contains(classname);
-          }
+          key: "is",
+          value: function is(query) {}
 
           /**
-          * Method to remove a class
-          * @param string classname
-          */
-
-     }, {
-          key: "removeClass",
-          value: function removeClass(classname) {
-               this.element.classList.remove(classname);
-               return this;
-          }
-
-          /**
-          * Method to append domdom element to a domdom container
-          * @param object container
-          */
+           * Method to append domdom element to a domdom container
+           * @param object container
+           */
 
      }, {
           key: "appendTo",
@@ -191,9 +200,9 @@ var domdomElement = function () {
           }
 
           /**
-          * Method to append domdom child to this domdom element
-          * @param object child
-          */
+           * Method to append domdom child to this domdom element
+           * @param object child
+           */
 
      }, {
           key: "append",
@@ -203,10 +212,21 @@ var domdomElement = function () {
           }
 
           /**
-          * Method to attach events to element
-          * @param string eventsString
-          * @param function method
-          */
+           * Method to remove domdom element
+           */
+
+     }, {
+          key: "remove",
+          value: function remove() {
+               this.element.remove();
+               return this;
+          }
+
+          /**
+           * Method to attach events to element
+           * @param string eventsString
+           * @param function method
+           */
 
      }, {
           key: "on",
@@ -245,9 +265,9 @@ var domdomElement = function () {
           }
 
           /**
-          * Method to get/set html to domdom element
-          * @param string content
-          */
+           * Method to get/set html to domdom element
+           * @param string content
+           */
 
      }, {
           key: "html",
@@ -266,9 +286,9 @@ var domdomElement = function () {
           }
 
           /**
-          * Method to set/get texts content
-          * @param string content
-          */
+           * Method to set/get texts content
+           * @param string content
+           */
 
      }, {
           key: "text",
@@ -283,17 +303,6 @@ var domdomElement = function () {
                }
 
                return this.element.innerText;
-          }
-
-          /**
-          * Method to remove domdom element
-          */
-
-     }, {
-          key: "remove",
-          value: function remove() {
-               this.element.remove();
-               return this;
           }
      }]);
 
